@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
-
+	register page
 {% endblock %}
+
 {% block content %}
-    <div class="container mt-3">
-        <h2>Register</h2>
-        <form action="#" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{form}}
-            <input type="submit" value="Register" name="submit" class="" style="display: inline-block; padding: 10px 50px; background-color: #121313; border: 1px solid #121313; color: #ffffff; border-radius: 5px; margin-top: 15px;">
-        </form>
-    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success" value="Save">
+    </form>
 {% endblock %}
